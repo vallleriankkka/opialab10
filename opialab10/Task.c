@@ -1,35 +1,8 @@
 #include <locale.h>
 #include <stdio.h>
 #include <math.h>|
-int get_duration(int start_sec, int end_sec);
-int check_status(int duration_sec);
-int get_full_minutes(int total_sec);
-void print_time_mm_ss(int minutes, int seconds);
-void process_stage(int start_sec, int end_sec);
 
-int main()
-{
-	setlocale(LC_CTYPE, "");
 
-	char sportsman;
-	int start_sec, end_sec;
-
-	for (;;)
-	{
-		printf("Введите однобуквенный код спортсмена\n");
-		scanf(" %c", &sportsman);
-
-		if (sportsman == '!')
-			break;
-
-		printf("Код: %c\n", sportsman);
-
-		printf("Введите старт и финиш\n");
-		scanf("%d %d", &start_sec, &end_sec);
-
-		process_stage(start_sec, end_sec);
-	}
-}
 int get_duration(int start_sec, int end_sec)
 {
 	return end_sec - start_sec;
@@ -78,5 +51,29 @@ void process_stage(int start_sec, int end_sec)
 	if (status == 0)
 	{
 		puts("Норма");
+	}
+}
+
+int main()
+{
+	setlocale(LC_CTYPE, "");
+
+	char sportsman;
+	int start_sec, end_sec;
+
+	for (;;)
+	{
+		printf("Введите однобуквенный код спортсмена\n");
+		scanf(" %c", &sportsman);
+
+		if (sportsman == '!')
+			break;
+
+		printf("Код: %c\n", sportsman);
+
+		printf("Введите старт и финиш\n");
+		scanf("%d %d", &start_sec, &end_sec);
+
+		process_stage(start_sec, end_sec);
 	}
 }
