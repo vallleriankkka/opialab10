@@ -107,14 +107,17 @@ int main()
 	char sportsman;
 	int start_sec, end_sec;
 
-	for (;;)
+	while (1)
 	{
 		printf("Введите однобуквенный код спортсмена\n");
 		scanf(" %c", &sportsman);
 
 		if (sportsman == '!')
+		{
 			printf("Завершение программы\n");
-		break;
+			break;
+		}
+
 
 		printf("Код: %c\n", sportsman);
 
@@ -123,6 +126,7 @@ int main()
 
 		process_stage(start_sec, end_sec);
 	}
+	return 0;
 }
 ```
 Файл заголовка
