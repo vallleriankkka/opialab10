@@ -1,7 +1,24 @@
 #include <locale.h>
 #include <stdio.h>
-#include <math.h>|
 
+//Контрольный пример 1
+//Код: D
+//Старт и финиш: 00 20
+//Вывод: 00:20 Дисквалификация
+
+//Контрольный пример 2
+//Код: A
+//Старт и финиш: 12 45
+//Вывод: 00:33 Рекорд
+
+//Контрольный пример 3
+//Код: L
+//Старт и финиш: 32 103
+//Вывод: 01:11 Норма
+
+//Контрольный пример 4
+//Код: !
+//Завершение программы
 
 int get_duration(int start_sec, int end_sec)
 {
@@ -61,13 +78,17 @@ int main()
 	char sportsman;
 	int start_sec, end_sec;
 
-	for (;;)
+	while (1)
 	{
 		printf("Введите однобуквенный код спортсмена\n");
 		scanf(" %c", &sportsman);
 
 		if (sportsman == '!')
+		{
+			printf("Завершение программы\n");
 			break;
+		}
+
 
 		printf("Код: %c\n", sportsman);
 
@@ -76,4 +97,5 @@ int main()
 
 		process_stage(start_sec, end_sec);
 	}
+	return 0;
 }
